@@ -1,5 +1,5 @@
 <template>
-  <div class="tab">
+  <div class="tab border-1px">
     <!--<router-link tag="div" class="tab-item" to="/goods">-->
     <!--<span class="tab-link">商品</span>-->
     <!--</router-link>-->
@@ -24,10 +24,12 @@ export default {}
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
   @import "~common/stylus/variable"
+  @import "~common/stylus/mixin"
   .tab
     display: flex
     height: 40px
     line-height: 40px
+    border-1px(rgba(7, 17, 27, 0.1))
     .tab-item
       flex: 1
       text-align: center
