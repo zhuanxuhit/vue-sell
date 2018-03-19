@@ -1,14 +1,20 @@
 <template>
   <div class="tab">
-    <router-link tag="div" class="tab-item" to="/goods">
-      <span class="tab-link">商品</span>
-    </router-link>
-    <router-link tag="div" class="tab-item" to="/ratings">
-      <span class="tab-link">评论</span>
-    </router-link>
-    <router-link tag="div" class="tab-item" to="/seller">
-      <span class="tab-link">商家</span>
-    </router-link>
+    <!--<router-link tag="div" class="tab-item" to="/goods">-->
+    <!--<span class="tab-link">商品</span>-->
+    <!--</router-link>-->
+    <div class="tab-item">
+      <router-link to="/goods">商品</router-link>
+    </div>
+    <div class="tab-item">
+      <router-link to="/ratings">评论</router-link>
+    </div>
+    <div class="tab-item">
+      <router-link to="/seller">商家</router-link>
+    </div>
+    <!--<router-link tag="div" class="tab-item" to="/ratings">-->
+      <!--<span class="tab-link">评论</span>-->
+    <!--</router-link>-->
   </div>
 </template>
 
@@ -22,15 +28,13 @@ export default {}
     display: flex
     height: 40px
     line-height: 40px
-    font-size: $font-size-medium
     .tab-item
       flex: 1
       text-align: center
-      .tab-link
-        padding-bottom: 5px
-        color: $color-text-l
-      &.router-link-active
-        .tab-link
-          color: $color-theme
-          border-bottom: 2px solid $color-theme
+      & > a
+        display : block
+        font-size: 14px
+        color: rgb(77, 85, 93)
+        &.router-link-active
+          color: rgb(240, 20, 20)
 </style>
