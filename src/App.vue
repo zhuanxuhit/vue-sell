@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <m-header></m-header>
+    <m-header :seller="seller"></m-header>
     <tab></tab>
     <router-view></router-view>
     <div class="content">
@@ -9,10 +9,27 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 import MHeader from 'components/m-header/m-header'
 import Tab from 'components/tab/tab'
+
+const ERR_OK = 0
+
 export default {
+  data () {
+    return {
+      seller: {}
+    }
+  },
+  created () {
+    console.log(this.$http)
+    this.$http.get('/api/seller').then((res) => {
+      res = res.body
+      if (res.errno === ERR_OK) {
+        this.seller = res.data
+      }
+    })
+  },
   components: {
     MHeader,
     Tab
